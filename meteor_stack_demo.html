@@ -1,0 +1,27 @@
+<head>
+	<title>Stack project</title>
+</head>
+
+<body>
+	{{> body_template}}
+</body>
+
+<template name="body_template">
+	<h1>Meteor Stack demo</h1>
+	Push value<input type="text" id="value" />&nbsp;
+	<input type="button" id="push" value="Push" />&nbsp;
+	<input type="button" id="pop" value="Pop" />&nbsp;
+	<input type="button" id="clear" value="Clear" />
+	<br/>
+	{{#if stack_isEmpty}}
+		Stack is empty.
+	{{else}}
+		Stack: [{{#each stack_element}}
+			{{> element}}
+		{{/each}}]
+	{{/if}}
+</template>
+
+<template name="element">
+	{{value}},&nbsp;
+</template>
